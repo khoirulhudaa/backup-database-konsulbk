@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Nov 2022 pada 05.05
+-- Waktu pembuatan: 21 Nov 2022 pada 08.36
 -- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.3.9
 
@@ -37,13 +37,7 @@ CREATE TABLE `admin` (
   `password` varchar(190) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `admin`
---
-
-INSERT INTO `admin` (`id_admin`, `username`, `alamat_admin`, `jk_admin`, `no_telephone`, `password`, `created_at`) VALUES
-(1, 'admin', 'default', 'Wanita', 891271567, 'admin123', '2022-11-20 07:24:33');
+-- Kesalahan membaca data untuk tabel konsulbk.admin: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `konsulbk`.`admin`' at line 1
 
 -- --------------------------------------------------------
 
@@ -59,13 +53,7 @@ CREATE TABLE `keluhan` (
   `lk2_s1` varchar(190) NOT NULL,
   `tgl_konsultasi` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `keluhan`
---
-
-INSERT INTO `keluhan` (`id_keluhan`, `username`, `jk_user`, `lk1_s1`, `lk2_s1`, `tgl_konsultasi`) VALUES
-(1, 'huda', 'Pria', 'asasas', 'asassa', '2022-11-21 03:47:20');
+-- Kesalahan membaca data untuk tabel konsulbk.keluhan: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `konsulbk`.`keluhan`' at line 1
 
 -- --------------------------------------------------------
 
@@ -130,6 +118,65 @@ INSERT INTO `keluhan3` (`id_keluhan`, `username`, `jk_user`, `lk1a_s3`, `lk1b_s3
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `keluhan4`
+--
+
+CREATE TABLE `keluhan4` (
+  `id_keluhan` int(4) NOT NULL,
+  `username` varchar(190) NOT NULL,
+  `jk_user` varchar(190) NOT NULL,
+  `lk1a_s4` varchar(190) NOT NULL,
+  `lk1b_s4` varchar(190) NOT NULL,
+  `ck1_s4` varchar(190) NOT NULL,
+  `ck2_s4` varchar(190) NOT NULL,
+  `ck3_s4` varchar(190) NOT NULL,
+  `ck4_s4` varchar(190) NOT NULL,
+  `ck5_s4` varchar(190) NOT NULL,
+  `lainnyaa_s4` varchar(190) NOT NULL,
+  `ck6_s4` varchar(190) NOT NULL,
+  `ck7_s4` varchar(190) NOT NULL,
+  `ck8_s4` varchar(190) NOT NULL,
+  `ck9_s4` varchar(190) NOT NULL,
+  `ck10_s4` varchar(190) NOT NULL,
+  `ck11_s4` varchar(190) NOT NULL,
+  `lainnyab_s4` varchar(190) NOT NULL,
+  `lk2_s4` varchar(190) NOT NULL,
+  `tgl_konsultasi` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `keluhan4`
+--
+
+INSERT INTO `keluhan4` (`id_keluhan`, `username`, `jk_user`, `lk1a_s4`, `lk1b_s4`, `ck1_s4`, `ck2_s4`, `ck3_s4`, `ck4_s4`, `ck5_s4`, `lainnyaa_s4`, `ck6_s4`, `ck7_s4`, `ck8_s4`, `ck9_s4`, `ck10_s4`, `ck11_s4`, `lainnyab_s4`, `lk2_s4`, `tgl_konsultasi`) VALUES
+(1, 'huda', 'Pria', 'dawda', 'd', '', 'Dengarkan seseorang yang bekerja dalam pekerjaan yang saya minat', 'Baca sesuatu tentang pekerjaan yang saya minati', 'Cari di web di seluruh dunia untuk informasi lebih lanjut tentang pekerjaan ini', '', 'sdsad', '', 'Berlaku', 'Belajar', 'Sukarelawan', '', '', 'sadas', 'daas', '2022-11-21 07:29:20');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `keluhan5`
+--
+
+CREATE TABLE `keluhan5` (
+  `id_keluhan` int(11) NOT NULL,
+  `username` varchar(190) NOT NULL,
+  `jk_user` varchar(190) NOT NULL,
+  `instagram` varchar(190) NOT NULL,
+  `email` varchar(190) NOT NULL,
+  `no_telephone` int(13) NOT NULL,
+  `tgl_konsultasi` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `keluhan5`
+--
+
+INSERT INTO `keluhan5` (`id_keluhan`, `username`, `jk_user`, `instagram`, `email`, `no_telephone`, `tgl_konsultasi`) VALUES
+(1, 'huda', 'Pria', 'dsfsdfdsfds', 'webdesainnn@gmaill.com', 2147483647, '2022-11-21 07:30:48');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `user`
 --
 
@@ -149,7 +196,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `no_telephone`, `jk_user`, `role`, `sesi`, `created_at`) VALUES
-(1, 'huda', 'qwerty', 2147483647, 'Pria', 'user', 3, '2022-11-20 07:18:10');
+(1, 'huda', 'qwerty', 2147483647, 'Pria', 'user', 5, '2022-11-20 07:18:10');
 
 --
 -- Indexes for dumped tables
@@ -177,6 +224,18 @@ ALTER TABLE `keluhan2`
 -- Indeks untuk tabel `keluhan3`
 --
 ALTER TABLE `keluhan3`
+  ADD PRIMARY KEY (`id_keluhan`);
+
+--
+-- Indeks untuk tabel `keluhan4`
+--
+ALTER TABLE `keluhan4`
+  ADD PRIMARY KEY (`id_keluhan`);
+
+--
+-- Indeks untuk tabel `keluhan5`
+--
+ALTER TABLE `keluhan5`
   ADD PRIMARY KEY (`id_keluhan`);
 
 --
@@ -212,6 +271,18 @@ ALTER TABLE `keluhan2`
 --
 ALTER TABLE `keluhan3`
   MODIFY `id_keluhan` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `keluhan4`
+--
+ALTER TABLE `keluhan4`
+  MODIFY `id_keluhan` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `keluhan5`
+--
+ALTER TABLE `keluhan5`
+  MODIFY `id_keluhan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
